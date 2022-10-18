@@ -1,0 +1,61 @@
+.App {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  * {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .sidebar {
+    height: 100%;
+    width: 250px;
+    background-color: #2F4050;
+  }
+  
+  .sidebar__list {
+    height: auto;
+    padding: 30px 10px 10px 10px;
+    width: 100%;
+  }
+  
+  .sidebar__list .row {
+    width: 100%;
+    height: 60px;
+    list-style-type: none;
+    margin: 0%;
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .sidebar__list #active {
+    background-color: #293846;
+  }
+  
+  .sidebar__list .row:hover {
+    cursor: pointer;
+    background-color: #293846;
+  }
+  
+  .row #icon {
+    flex: 30%;
+    display: grid;
+    place-items: center;
+  }
+  
+  .row #title {
+    flex: 70%;
+    display: grid;
+    place-items: center;
+  }

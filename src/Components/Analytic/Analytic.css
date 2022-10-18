@@ -1,0 +1,130 @@
+.analytics-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container-component {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+    font-size: 50px;
+}
+  
+  * {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@200;300;400;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: #edf2f8;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    line-height: 1.7;
+    font-size: 13px;
+  }
+
+  .card__header-title h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .card__header-body h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .add-color-icon {
+    font-size: 100px !important;
+    color: #fff;
+  }
+  
+  .testimonials {
+    margin: 100px auto100px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+  }
+  
+  .card {
+    background-color: #2F4050;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+      padding: 10px;
+      min-width: 200px;
+      height: 200px;
+  }
+  
+  .card__header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      align-items: center;
+  }
+  
+  .card__header img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid chocolate;
+      margin-right: 20px;
+  }
+  
+  .card__header p {
+      opacity: 0.5;
+  }
+
+  
+  /* Cách 1 */
+  
+  /* .card:nth-of-type(1) {
+      grid-column: 1 / span 2;
+  } */
+  
+  /* .card:nth-of-type(4) {
+      grid-column: 1 / span 2;
+  } */
+  
+  /* .card:nth-of-type(5) {
+      grid-row: 1 / span 2;
+      grid-column: 4 / span 1;
+  } */
+  
+  @media(max-width: 768px) {
+      .testimonials {
+          display: flex;
+          flex-direction: column;
+      }
+  }
+  
+  /* Cách 2 */
+  
+  /* .card:nth-of-type(1) {
+      grid-column: 1;
+  }
+  
+  .card:nth-of-type(4) {
+      grid-column: 1;
+  } */
+  
