@@ -8,38 +8,38 @@ import Settings from '@material-ui/icons/Settings';
 
 export const SidebarData = [
   {
-    title: 'Analytics',
+    title: 'Analytic',
     icon: <AssessmentIcon />,
-    link: '/analytics',
+    path: '/analytic',
   },
   {
     title: 'User',
     icon: <GroupIcon />,
-    link: '/user',
+    path: '/user',
   },
   {
     title: 'Gift',
     icon: <CardGiftcardOutlined />,
-    link: '/gift',
+    path: '/gift',
   },
   {
     title: 'Transactions',
     icon: <Receipt />,
-    link: '/transaction',
+    path: '/transaction',
   },
   {
     title: 'Ranking',
     icon: <EmojiEvents />,
-    link: '/ranking',
+    path: '/ranking',
   },
   {
     title: 'Black List',
     icon: <CancelOutlined />,
-    link: '/ranking',
+    path: '/black-list',
   },
   {
     title: 'Config',
     icon: <Settings />,
-    link: '/config',
+    path: '/config',
   },
 ];
