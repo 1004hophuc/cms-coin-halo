@@ -1,6 +1,6 @@
 import React from 'react';
 import './Analytic.css';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
 // import AssessmentIcon from '@material-ui/icons/Assessment';
 import GroupIcon from '@material-ui/icons/Group';
 
@@ -18,11 +18,7 @@ function Analytic() {
     <div className='container__analytic'>
       <Card
         title='TOTAL USER'
-        extra={
-          <a href='#'>
-            <GroupIcon />
-          </a>
-        }
+        extra={<GroupIcon />}
         style={{ width: 300, height: 250, margin: 20 }}
       >
         <p>Amount user to this point</p>
@@ -33,11 +29,7 @@ function Analytic() {
       </Card>
       <Card
         title='TOTAL POINT EARN TODAY'
-        extra={
-          <a href='#'>
-            <MonetizationOn />
-          </a>
-        }
+        extra={<MonetizationOn />}
         style={{ width: 300, height: 250, margin: 20 }}
       >
         <p>Total coins user earned today</p>
@@ -48,11 +40,7 @@ function Analytic() {
       </Card>
       <Card
         title='TOTAL WITHDRAW TODAY'
-        extra={
-          <a href='#'>
-            <Receipt />
-          </a>
-        }
+        extra={<Receipt />}
         style={{ width: 300, height: 250, margin: 20 }}
       >
         <p>Total withdraw of user today</p>
@@ -63,11 +51,7 @@ function Analytic() {
       </Card>
       <Card
         title='TOTAL DEPOSIT TODAY'
-        extra={
-          <a href='#'>
-            <Receipt />
-          </a>
-        }
+        extra={<Receipt />}
         style={{ width: 300, height: 250, margin: 20 }}
       >
         <p>Total deposit of user today</p>
@@ -78,11 +62,7 @@ function Analytic() {
       </Card>
       <Card
         title='Default size card'
-        extra={
-          <a href='#'>
-            <GroupIcon />
-          </a>
-        }
+        extra={<GroupIcon />}
         style={{ width: 300, height: 250, margin: 20 }}
       >
         <p>Card content</p>

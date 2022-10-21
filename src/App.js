@@ -13,13 +13,27 @@ import ErrorPage from './Components/ErrorPage';
 import { useState } from 'react';
 import DefaultLayout from './Layout/DefaultLayout';
 import { privateRoutes } from '../src/Routes';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 function App() {
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(false);
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   try {
+  //     const result = axios.post('login', )
+  //   } catch (error) {
+
+  //   }
+  // }, []);
 
   return (
     <Routes>
       <Route path='/' element={<Login />} />
+      {/* <Route element={user ? <DefaultLayout /> : <Login />}>
+       */}
       <Route element={<DefaultLayout />}>
         {privateRoutes.map((route, index) => {
           const Page = route.component;

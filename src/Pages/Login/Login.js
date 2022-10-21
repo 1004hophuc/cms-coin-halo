@@ -1,11 +1,57 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
+
+  const login = async (e) => {
+    e.preventDefault();
+    try {
+      const data = { username: username, password: password };
+      const response = await axios.post(
+        'http://localhost:5000/api/admin/login',
+        data
+      );
+
+      if (response?.data.error) {
+        alert(response.data.error);
+      } else {
+        console.log(response?.data);
+        sessionStorage.setItem('accessToken', response?.data?.accessToken);
+        navigate('/analytic');
+      }
+    } catch (error) {
+      console.log(error.msg);
+      return error.msg;
+    }
+  };
+
+  // const login = (e) => {
+  //   e.preventDefault();
+  //   const data = { username: username, password: password };
+  //   axios
+  //     .post('http://localhost:5000/api/admin/login', data)
+  //     .then((response) => {
+  //       navigate('/analytic');
+  //       console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+  //       console.log(response.data);
+  //     })
+  //     .catch((error) => {
+  //       navigate('/');
+  //       console.log(error.message);
+  //     });
+  // };
+
   return (
     <Fragment>
       <div className='lg:flex'>
         <Fragment>
-          <form className='lg:w-1/2 xl:max-w-screen-sm'>
+          <form onSubmit={login} className='lg:w-1/2 xl:max-w-screen-sm'>
             <div className='py-12 bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12'>
               <div className='cursor-pointer flex items-center'>
                 <div>
@@ -46,36 +92,44 @@ function Login() {
             </div>
             <div className='mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl'>
               <h2 className='text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl xl:text-bold'>
-                Đăng nhập
+                Sign In
               </h2>
               <div className='mt-12'>
                 <div>
                   <div>
                     <div className='text-sm font-bold text-gray-700 tracking-wide'>
-                      Tài khoản
+                      Account
                     </div>
                     <input
-                      name='taiKhoan'
+                      autoComplete='off'
+                      onChange={(event) => {
+                        setUsername(event.target.value);
+                      }}
+                      type='text'
+                      name='username'
                       className='w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500'
-                      placeholder='Nhập vào tài khoản'
+                      placeholder='Enter your account'
                     />
                   </div>
                   <div className='mt-8'>
                     <div className='flex justify-between items-center'>
                       <div className='text-sm font-bold text-gray-700 tracking-wide'>
-                        Mật khẩu
+                        Password
                       </div>
                     </div>
                     <input
+                      onChange={(event) => {
+                        setPassword(event.target.value);
+                      }}
                       type='password'
-                      name='matKhau'
+                      name='password'
                       className='w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500'
-                      placeholder='Nhập vào mật khẩu'
+                      placeholder='Enter your password'
                     />
                   </div>
                   <div className='mt-10'>
-                    <button className='bg-indigo-500 text-gray-100 p-4 w-full rounded-full tracking-wide font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600 shadow-lg'>
-                      Đăng nhập
+                    <button className='bg-indigo-500 text-xl text-gray-100 p-4 w-full rounded-full tracking-wide font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600 shadow-lg'>
+                      Login
                     </button>
                   </div>
                 </div>
@@ -92,7 +146,6 @@ function Login() {
               data-name='Layer 1'
               viewBox='0 0 528.71721 699.76785'
             >
-              <title>Login</title>
               <rect y='17.06342' width={444} height={657} fill='#535461' />
               <polygon
                 points='323 691.063 0 674.063 0 17.063 323 0.063 323 691.063'
